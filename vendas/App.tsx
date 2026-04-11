@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { VideoView, useVideoPlayer } from 'expo-video';
 
+import React from 'react';
+import Texto from './components/Texto';
+
 export default function App() {
   const player = useVideoPlayer('https://www.pexels.com/download/video/3752532/', player => {
       player.loop = true;
@@ -10,10 +13,10 @@ export default function App() {
   return (
     <ScrollView style={styles.container}>
       <Image source={require('./images/bubla.webp')} style={styles.imagem} resizeMode='contain' />
-      <Text style={styles.textStyle}>
+      <Texto estiloEspecifico={estilos.padrao}>
         Bulbasaur usou Chicote de Vinha e causou X de dano!{'\n'}
         Squirtle usou Jato d'Água e causou Y de dano!{'\n'}
-        Bulbasaur venceu!</Text>
+        Bulbasaur venceu!</Texto>
       <StatusBar style="light" animated />
       <Image source={require('./images/gifSquirtle.webp')} style={styles.imagem} resizeMode='contain' />
       <VideoView player ={player} style={styles.video}
@@ -27,13 +30,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'gray',
   },
-  textStyle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: 'white',
-    lineHeight: 24,
-    paddingVertical: 12,
+  Texto: {
+    
   },
   imagem: {
     height: 300,
