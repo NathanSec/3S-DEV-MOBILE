@@ -13,7 +13,7 @@ export default function App() {
   return (
     <ScrollView style={styles.container}>
       <Image source={require('./images/bubla.webp')} style={styles.imagem} resizeMode='contain' />
-      <Texto estiloEspecifico={estilos.padrao}>
+      <Texto estiloEspecifico={styles.Texto}>
         Bulbasaur usou Chicote de Vinha e causou X de dano!{'\n'}
         Squirtle usou Jato d'Água e causou Y de dano!{'\n'}
         Bulbasaur venceu!</Texto>
